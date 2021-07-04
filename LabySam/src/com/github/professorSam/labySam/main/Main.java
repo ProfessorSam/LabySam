@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
+import com.github.professorSam.labySam.commands.LabyReload;
 import com.github.professorSam.labySam.functions.Banner;
 import com.github.professorSam.labySam.functions.Gamemode;
 import com.github.professorSam.labySam.functions.VoiceChat;
@@ -24,9 +25,12 @@ public class Main extends JavaPlugin implements PluginMessageListener{
 		plugin.saveDefaultConfig();
 		plugin.saveConfig();
 		getServer().getMessenger().registerIncomingPluginChannel(this, "labymod3:main", this);
+		
 		getServer().getPluginManager().registerEvents(new Banner(), this);
 		getServer().getPluginManager().registerEvents(new Gamemode(), this);
 		getServer().getPluginManager().registerEvents(new VoiceChat(), this);
+		
+		this.getCommand("reloadlaby").setExecutor(new LabyReload());
 	}
 
 	@Override

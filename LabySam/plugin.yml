@@ -1,4 +1,10 @@
-name: Labysam
+name: labySam
 version: '1.4.2'
 author: professor_Sam
 main: com.github.professorSam.labySam.main.Main
+commands:
+   reloadlaby:
+      description: lade labysam neu
+permissions:
+   labysam.reload:
+      default: false
