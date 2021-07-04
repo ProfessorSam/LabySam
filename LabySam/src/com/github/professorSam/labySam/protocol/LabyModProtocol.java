@@ -1,18 +1,19 @@
 package com.github.professorSam.labySam.protocol;
 
 
+import java.nio.charset.Charset;
+
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
+import org.bukkit.entity.Player;
+
 import com.google.gson.JsonElement;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.handler.codec.DecoderException;
 import io.netty.handler.codec.EncoderException;
-import net.minecraft.server.v1_8_R3.PacketDataSerializer;
-import net.minecraft.server.v1_8_R3.PacketPlayOutCustomPayload;
-
-import java.nio.charset.Charset;
-
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
-import org.bukkit.entity.Player;
+import net.minecraft.server.v1_16_R3.PacketDataSerializer;
+import net.minecraft.server.v1_16_R3.PacketPlayOutCustomPayload;
 
 public class LabyModProtocol {
 
@@ -26,7 +27,7 @@ public class LabyModProtocol {
         byte[] bytes = getBytesToSend( key, messageContent.toString() );
 
         PacketDataSerializer pds = new PacketDataSerializer( Unpooled.wrappedBuffer( bytes ) );
-        PacketPlayOutCustomPayload payloadPacket = new PacketPlayOutCustomPayload( "labymod3:main", pds );
+        PacketPlayOutCustomPayload payloadPacket = new PacketPlayOutCustomPayload( null , pds );
         ((CraftPlayer) player).getHandle().playerConnection.sendPacket( payloadPacket );
     }
 
