@@ -1,0 +1,4 @@
+name: Labysam
+version: '1.4.2'
+author: professor_Sam
+main: com.github.professorSam.labySam.main.Main

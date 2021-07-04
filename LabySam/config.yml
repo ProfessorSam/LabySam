@@ -1,0 +1,8 @@
+Banner:
+   Link: "https://cdn.discordapp.com/attachments/834043600018604032/860965977901236304/banner.png"
+Gamemode:
+   Name: 'Lobby'
+VoiceChat:
+   Recommend: false
+Cinescope:
+   Enabled: true
